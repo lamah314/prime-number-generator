@@ -15,7 +15,7 @@ public class PrimeNumberGeneratorTest {
 	public void initialize() {
 		// instantiating object since interface methods are not static
 		primeNumberGenerator = new PrimeNumberGenerator();
-		primeNumberGenerator.generateBase(11); //for checking isPrime method
+		primeNumberGenerator.generateBase(11); // for checking isPrime method
 	}
 
 	@Test
@@ -53,7 +53,7 @@ public class PrimeNumberGeneratorTest {
 	public void fiveIsPrime() {
 		assertTrue(primeNumberGenerator.isPrime(3));
 	}
-	
+
 	@Test
 	public void elevenIsPrime() {
 		assertTrue(primeNumberGenerator.isPrime(11));
@@ -62,7 +62,7 @@ public class PrimeNumberGeneratorTest {
 	@Test
 	public void firstThreePrimeNumbersAreTwoThreeFive() {
 		List<Integer> testListBase = primeNumberGenerator.generateBase(5);
-		List<Integer> testList = primeNumberGenerator.generate(0,5);
+		List<Integer> testList = primeNumberGenerator.generate(0, 5);
 		List<Integer> expectedList = Arrays.asList(new Integer[] { 2, 3, 5 });
 		assertEquals(expectedList, testList);
 	}
@@ -76,14 +76,14 @@ public class PrimeNumberGeneratorTest {
 		assertEquals(expectedList, testListBase);
 		assertEquals(expectedList, testList);
 	}
-	
+
 	@Test
 	public void inverseOrderAchievesSameResults() {
-		List<Integer> testList = primeNumberGenerator.generate(0,101);
-		List<Integer> test2List = primeNumberGenerator.generate(101,0);
+		List<Integer> testList = primeNumberGenerator.generate(0, 101);
+		List<Integer> test2List = primeNumberGenerator.generate(101, 0);
 		assertEquals(test2List, testList);
 	}
-	
+
 	@Test
 	public void generatorResultsMatchInstructions() {
 		List<Integer> testList = primeNumberGenerator.generate(7900, 7920);
@@ -94,18 +94,19 @@ public class PrimeNumberGeneratorTest {
 	@Test
 	public void listIndexFinderShouldReturn2() {
 		List<Integer> testListBase = primeNumberGenerator.generateBase(5);
-		int indexNumber = primeNumberGenerator.listIndexFinder(testListBase,6);
+		int indexNumber = primeNumberGenerator.listIndexFinder(testListBase, 6);
 		assertEquals(2, indexNumber);
 	}
-	
+
 	@Test
 	public void listIndexFinderShouldReturn3() {
 		List<Integer> testListBase = primeNumberGenerator.generateBase(7);
-		int indexNumber = primeNumberGenerator.listIndexFinder(testListBase,100);
+		int indexNumber = primeNumberGenerator.listIndexFinder(testListBase, 100); // (why 100?) index based off of
+																					// generated base
 		assertEquals(3, indexNumber);
 	}
-	
-	//These test if interface methods exist in main class. Probably not necessary.
+
+	// These test if interface methods exist in main class. Probably not necessary.
 //	@Test
 //	public void primeNumberGeneratorContainsGenerateMethod() {
 //		Method methodToFind = null;
